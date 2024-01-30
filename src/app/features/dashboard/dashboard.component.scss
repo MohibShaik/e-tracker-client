@@ -1,0 +1,7 @@
+@import '../../../styles/colors';
+
+.content-container {
+    padding: 30px 5%;
+    height: 100vh;
+    background-color: map-get($map: $white-color-variants, $key: 500);
+}

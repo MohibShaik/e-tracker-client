@@ -1,0 +1,28 @@
+@import "./colors";
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
+
+$Etracker-primary: mat.define-palette($pat-custom-blue, 500);
+$Etracker-accent: mat.define-palette($pat-custom-pink, 500);
+$Etracker-warn: mat.define-palette(mat.$red-palette);
+
+$Etracker-theme: mat.define-light-theme((color: (primary: $Etracker-primary,
+                accent: $Etracker-accent,
+                warn: $Etracker-warn,
+            ),
+        ));
+
+$Etracker-primary-dark: mat.define-palette($pat-custom-blue, 500);
+$Etracker-accent-dark: mat.define-palette($mat-yellow, 500);
+$Etracker-warn-dark: mat.define-palette(mat.$red-palette);
+
+
+$Etracker-theme-dark: mat.define-dark-theme((color: (primary: $Etracker-primary,
+                accent: $Etracker-accent,
+                warn: $Etracker-warn,
+
+            ),
+        ));
+
+.dark-theme-mode {
+    @include angular-material-theme($Etracker-theme-dark);
+}

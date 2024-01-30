@@ -1,0 +1,16 @@
+@import "../colors";
+
+@mixin mat-tab-scss {
+
+    #dashboard-tab-group {
+        .mat-mdc-tab-header {
+            border-bottom: 1px solid map-get($map: $white-color-variants, $key: 400);
+            background: map-get($map: $white-color-variants, $key: 300);
+        }
+
+        .mdc-tab--active {
+            color: #1F3850 !important;
+            // font-weight: 700;
+        }
+    }
+}

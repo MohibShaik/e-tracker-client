@@ -1,0 +1,21 @@
+@import "../colors";
+
+@mixin mat-card-scss {
+
+    #custom-card {
+        border: 2px solid map-get($map: $white-color-variants, $key: 200);
+        box-shadow: none;
+
+        .mat-mdc-card-header {
+            display: flex;
+            padding: 16px 16px !important;
+            border-bottom: 2px solid map-get($map: $white-color-variants, $key: 200);
+            color: map-get($map: $white-color-variants, $key: 900);
+            font-weight: 600;
+        }
+
+        .mat-mdc-card-content {
+            margin: 18px !important;
+        }
+    }
+}

@@ -1,0 +1,104 @@
+<div class="main-container" fxLayout="column" fxLayoutGap="24px">
+  <div class="row" fxLayout="row" fxLayoutGap="30px">
+    <mat-card class="w-50" id="custom-card">
+      <mat-card-header class="upper-case">Add Transaction</mat-card-header>
+      <mat-card-content>
+        <div class="form-container">
+          <div class="row" fxLayout="row" fxLayoutGap="15px">
+            <div class="input-field-wrapper w-100">
+              <p class="label-text">Description</p>
+              <mat-form-field
+                class="example-full-width w-100"
+                appearance="outline"
+              >
+                <textarea
+                  matInput
+                  placeholder="Enter your description"
+                ></textarea>
+              </mat-form-field>
+            </div>
+          </div>
+
+          <div class="row" fxLayout="row" fxLayoutGap="15px">
+            <div class="input-field-wrapper">
+              <p class="label-text">Category</p>
+              <mat-form-field appearance="outline">
+                <mat-select placeholder="Select category">
+                  <mat-option *ngFor="let x of foods">
+                    {{ x?.viewValue }}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+
+            <div class="input-field-wrapper">
+              <p class="label-text">Date</p>
+              <mat-form-field appearance="outline">
+                <input
+                  matInput
+                  [matDatepicker]="picker"
+                  placeholder="Select date"
+                />
+                <mat-datepicker-toggle
+                  matIconSuffix
+                  [for]="picker"
+                ></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+              </mat-form-field>
+            </div>
+          </div>
+
+          <div class="row padding" fxLayout="row" fxLayoutGap="15px">
+            <div class="input-field-wrapper w-100">
+              <p class="label-text">Type</p>
+              <mat-radio-group aria-label="Select an option">
+                <mat-radio-button value="1">Cash</mat-radio-button>
+                <mat-radio-button value="2">Cheque</mat-radio-button>
+                <mat-radio-button value="3">Credit Card</mat-radio-button>
+                <mat-radio-button value="4">UPI Transfer</mat-radio-button>
+              </mat-radio-group>
+            </div>
+          </div>
+
+          <div class="row" fxLayout="row" fxLayoutGap="15px">
+            <div class="input-field-wrapper">
+              <p class="label-text">Bank Name</p>
+              <mat-form-field appearance="outline">
+                <mat-select placeholder="Bank name">
+                  <mat-option *ngFor="let x of foods">
+                    {{ x?.viewValue }}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+
+            <div class="input-field-wrapper">
+              <p class="label-text">Amount</p>
+              <mat-form-field class="example-full-width" appearance="outline">
+                <input type="number" matInput placeholder="Enter the amount" />
+              </mat-form-field>
+            </div>
+          </div>
+
+          <div
+            class="row action-section"
+            fxLayout="row"
+            fxLayoutAlign="end none"
+          >
+            <button mat-raised-button color="primary" class="submit-btn">
+              Submit
+            </button>
+          </div>
+        </div>
+      </mat-card-content>
+    </mat-card>
+
+    <mat-card class="w-50">
+      <mat-card-content>Simple card</mat-card-content>
+    </mat-card>
+  </div>
+
+  <div class="budget-overview">
+    <app-budget-overview></app-budget-overview>
+  </div>
+</div>

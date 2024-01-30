@@ -1,0 +1,16 @@
+@import '../../../../styles/colors';
+
+.example-spacer {
+    flex: 1 1 auto;
+}
+
+.main-toolbar {
+    background: map-get($map: $white-color-variants, $key: 300) !important;
+    padding: 0 72px;
+    border-bottom: 2px solid #1F3850;
+
+    .main-title {
+        font-size: 32px;
+        color: #1F3850;
+    }
+}

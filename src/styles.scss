@@ -1,1 +1,131 @@
+@use "@angular/material" as mat;
+@include mat.core();
+@import "./styles/colors";
+@import '../node_modules/@angular/material/theming';
+@import "./styles/theme.scss";
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+@import "./styles/mixins/mixins.scss";
+//custom typography
+$Etracker-font-family: "'Ubuntu', sans-serif";
+$custom-typography: mat-typography-config($font-family: "'Ubuntu', sans-serif",
+        $display-4: mat-typography-level(112px, $font-family: $Etracker-font-family),
+        $display-3: mat-typography-level(56px, $font-family: $Etracker-font-family),
+        $display-2: mat-typography-level(45px, $font-family: $Etracker-font-family),
+        $display-1: mat-typography-level(34px, $font-family: $Etracker-font-family),
+        $headline: mat-typography-level(24px, $font-family: $Etracker-font-family),
+        $title: mat-typography-level(20px, $font-family: $Etracker-font-family),
+        $subheading-2: mat-typography-level(18px, $font-family: $Etracker-font-family),
+        $subheading-1: mat-typography-level(16px, $font-family: $Etracker-font-family),
+        $body-1: mat-typography-level(13px, $font-family: $Etracker-font-family),
+    );
+
+@include mat.typography-hierarchy($custom-typography);
+@include angular-material-typography($custom-typography);
+@include mat.all-component-themes($Etracker-theme);
+
+// @import "reusable";
+// @import "override";
+@import "./styles/common.scss";
+@import "./styles/colors";
+
+// material components
+@import "./styles/material-components/mat-tab";
+@import "./styles/material-components/mat-card";
+// @import "./styles/material-components/mat-expansion-panel";
+// @import "./styles/material-components/mat-menu";
+// @import "./styles/material-components/mat-vertical-stepper";
+// @import "./styles/material-components/mat-check-box";
+// @import "./styles/material-components/mat-radio";
+// @import "./styles/material-components/mat-chip";
+// @import "./styles/material-components/mat-tab";
+// @import "./styles/material-components/mat-input";
+// @import "./styles/material-components/mat-list";
+// @import "./styles/material-components/mat-toggle";
+// @import "./styles/material-components/mat-tooltip";
+// @import "./styles/material-components/mat-dialog";
+// @import "./styles/material-components/mat-select";
+
+@include mat-tab-scss;
+@include mat-card-scss;
+// @include mat-expansion-panel-scss;
+// @include mat-menu-scss;
+// @include mat-vertical-stepper-scss;
+// @include mat-check-box-scss;
+// @include mat-radio-scss;
+// @include mat-chip-scss;
+// @include mat-tab-scss;
+// @include mat-input-scss;
+// @include mat-list-scss;
+// @include mat-toggle-scss;
+// @include mat-tooltip-scss;
+// @include mat-dialog-scss;
+// @include mat-select-scss;
+
 /* You can add global styles to this file, and also import other style files */
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+        Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+.mat-drawer-content {
+    background-color: map-get($map: $white-color-variants, $key: 600) !important;
+}
+
+.search-field {
+    width: 22.375rem;
+    background-color: map-get($map: $white-color-variants, $key: 300);
+    color: map-get($map: $white-color-variants, $key: 100);
+
+    .mat-form-field-wrapper {
+        margin: 0rem !important;
+        padding: 0rem !important;
+    }
+}
+
+.mat-drawer-inner-container {
+    overflow-y: hidden !important;
+}
+
+::-webkit-scrollbar {
+    width: 0em;
+    height: 0em;
+}
+
+.timePicker {
+    display: none !important;
+}
+
+.mat-progress-spinner circle,
+.mat-spinner circle {
+    stroke: #9147e6;
+}
+
+ngx-mat-calendar .ngx-mat-calendar-body .mat-calendar-body-cell {
+    position: relative !important;
+}
+
+ngx-mat-calendar-header .mat-calendar-arrow {
+    width: 0px !important;
+}
+
+mat-calendar .mat-calendar-body .mat-calendar-body-cell {
+    position: absolute !important;
+    height: 100% !important;
+}
+
+.mat-form-field-required-marker {
+    display: none;
+}
+
+@media (min-width: 1920px) and (min-height: 969px) {
+    body {
+        zoom: 1.4;
+    }
+}
